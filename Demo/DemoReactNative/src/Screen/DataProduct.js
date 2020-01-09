@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, TouchableOpacityBase } from 'react-native';
+import { ScrollView, TouchableOpacity, AsyncStorage } from 'react-native';
 import Vsmart from '../image/vsmart.jpg';
 import iPhone from '../image/ip11promax.png';
 import iPhone_Edge from '../image/iphong_edge.jpg';
@@ -158,11 +158,16 @@ class DataProduct extends Component {
         this.props.navigation.navigate('Cart');
     }
 
+    _handleLogOut = async () => {
+        await AsyncStorage.clear();
+        this.props.navigation.navigate('Login');
+    }
+
     render() {
         const { data } = this.state;
         return (
             <ScrollView>
-                <ScreenProduct onNavigate={this._handleOnPressDetail} data={data} />
+                <ScreenProduct onNavigate={this._handleOnPressDetail} onLogOut={this._handleLogOut} data={data} />
             </ScrollView>
         )
     }

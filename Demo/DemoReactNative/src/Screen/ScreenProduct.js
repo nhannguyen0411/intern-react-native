@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity, FlatList, ScrollView } from 'react-native';
+import { Text, View, StyleSheet, Image, TouchableOpacity, FlatList, ScrollView, Button } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import Products from '../components/Products';
 import Filter from '../image/filter.png';
@@ -26,11 +26,14 @@ class ScreenProducts extends Component {
         this.setState({ data });
     }
 
+    
+
     render() {
         const { data } = this.state;
-        const { onNavigate } = this.props;
+        const { onNavigate, onLogOut } = this.props;
         return (
             <ScrollView>
+                <Button title='Log out' color='green' onPress={onLogOut}/>
                 <View style={styles.container_header}>
                     <View style={styles.component_header}>
                         <TouchableOpacity style={{flex: 1, flexDirection: 'row', alignItems: "center"}}>

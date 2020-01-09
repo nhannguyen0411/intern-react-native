@@ -58,7 +58,7 @@ class ScreenLogin extends Component {
                 if(find) {
                    
                     if(find.pass === String(this.state.password)) {
-                        this.props.navigation.navigate('Task', {id: find._id});
+                        this.props.navigation.navigate('Product');
                         await AsyncStorage.setItem('_id', find._id);
                     }
                     else {

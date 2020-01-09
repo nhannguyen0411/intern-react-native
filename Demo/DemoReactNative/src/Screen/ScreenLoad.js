@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, ScrollView } from 'react-native';
-import axios from 'axios';
 import { AsyncStorage } from 'react-native';
 
 class ScreenLoad extends Component {
@@ -8,10 +7,15 @@ class ScreenLoad extends Component {
     _loadData = async() => {
         const _id = await AsyncStorage.getItem('_id');
         console.log(_id);
-        this.props.navigation.navigate( _id ? 'Task' : 'Login')
+        this.props.navigation.navigate( _id ? "Product" : this._handleOnLogin())
     }
 
-    componentWillMount() {
+    _handleOnLogin = async () => {
+        await AsyncStorage.clear();
+        this.props.navigation.navigate('Login');
+    }
+
+    componentDidMount() {
         this._loadData();
     }
 

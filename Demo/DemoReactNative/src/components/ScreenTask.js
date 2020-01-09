@@ -36,16 +36,6 @@ class ScreenTask extends Component {
     }
 
     _handleLogOut = async () => {
-        // console.log(this.props.navigation);
-        // const status = await AsyncStorage.removeItem('_id');
-        // if(status) {
-        //     console.log('Lỗi');
-        // }
-        // else {
-        //     // this.setState({user: {}})
-        //     this.props.navigation.navigate('Login');
-            
-        // }
         await AsyncStorage.clear();
         this.props.navigation.navigate('Login');
     }

@@ -11,9 +11,9 @@ import React, { Component } from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import ScreenTask from './src/components/ScreenTask';
-import ScreenLogin from './src/components/ScreenLogin';
-import ScreenRegister from './src/components/ScreenRegister';
-import ScreenLoad from './src/components/ScreenLoad';
+import ScreenLogin from './src/Screen/ScreenLogin';
+import ScreenRegister from './src/Screen/ScreenRegister';
+import ScreenLoad from './src/Screen/ScreenLoad';
 import ScreenProducts from './src/Screen/ScreenProduct';
 import ScreenDetail from './src/Screen/ScreenDetail';
 import DataProduct from './src/Screen/DataProduct';
@@ -24,14 +24,13 @@ const RootStack = createStackNavigator(
   {
     Home: ScreenLoad,
     Login: ScreenLogin,
-    Task: ScreenTask,
     Register: ScreenRegister,
     Product: DataProduct,
     DetailProduct: ScreenDetail,
     Cart: ScreenCart
   },
   {
-    initialRouteName: 'Login'
+    initialRouteName: 'Home'
   }
 );
 

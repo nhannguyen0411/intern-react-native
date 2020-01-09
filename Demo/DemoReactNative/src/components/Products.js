@@ -4,7 +4,7 @@ import Star from '../image/star.png';
 import HalfStar from '../image/starhalf.png';
 class Products extends Component {
     render() {
-        const { data, onPress, order } = this.props;
+        const { data, onPress } = this.props;
         return (
             <TouchableOpacity onPress={onPress} style={{marginRight: 100}}>
                 <View style={styles.container_component}>

@@ -5,6 +5,7 @@ import Cart from '../components/Cart';
 class ScreenCart extends Component {
     
     render() {
+        //const navigate = this.props.navigation
         return (
             <CartContext.Consumer>
                 {
